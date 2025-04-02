@@ -21,3 +21,5 @@ docs/*
 .DS_Store
 /data
 /docs-web/data
+/target
+/docs-core/data
