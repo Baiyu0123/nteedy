@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="Custom PMD Ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <!-- Lines of Code (LoC) -->
+    <rule ref="rulesets/java/codesize.xml/ExcessiveClassLength"/>
+    <rule ref="rulesets/java/codesize.xml/ExcessiveMethodLength"/>
+
+    <!-- Cyclomatic Complexity (CC) -->
+    <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity"/>
+
+    <!-- Weighted Methods per Class (WMC) -->
+
+    <!-- Coupling Between Objects (CBO) -->
+    <rule ref="rulesets/java/codesize.xml/TooManyFields"/>
+
+    <!-- Lack of Cohesion in Methods (LCOM) -->
+    <rule ref="rulesets/java/codesize.xml/ExcessivePublicCount"/>
+</ruleset>

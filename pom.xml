@@ -89,8 +89,43 @@
       </site>
   </distributionManagement>
 
-  <build>
+  <reporting>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.18.0</version>
+        <configuration> 
+          <rulesets> 
+            <ruleset>customize-rules.xml</ruleset> 
+          </rulesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <build>
+    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.18.0</version> <!-- 使用最新的稳定版本 -->
+        <configuration> 
+          <rulesets> 
+            <ruleset>customize-rules.xml</ruleset> 
+          </rulesets>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase> <!-- 在 verify 阶段运行 PMD -->
+            <goals>
+              <goal>check</goal> 
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
