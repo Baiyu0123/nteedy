@@ -12,9 +12,9 @@
         stage('Build') { 
             steps { 
                 checkout scmGit( 
-                    branches: [[name: '*/master']],  
+                    branches: [[name: '*/branch3']],  
                     extensions: [],  
-                    userRemoteConfigs: [[url: 'https://github.com/xx/Teedy.git']] 
+                    userRemoteConfigs: [[url: 'https://github.com/Baiyu0123/nteedy.git']] 
 // your github Repository 
                 ) 
                 sh 'mvn -B -DskipTests clean package' 
@@ -34,7 +34,7 @@
             steps { 
                 script { 
                     // sign in Docker Hub 
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') { 
+                    docker.withRegistry('https://registry.hub.docker.com', 'baiyu0123') { 
                         // push image 
                         docker.image("${env.DOCKER_IMAGE}:${env.DOCKER_TAG}").push() 
                         // ：optional: label latest 
